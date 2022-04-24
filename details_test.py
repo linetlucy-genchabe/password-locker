@@ -51,3 +51,27 @@ class TestCredentials(unittest.TestCase):
 		return current_user
 
 		self.assertEqual(current_user,Credential.check_user(user2.password,user2.first_name))
+
+    def setUp(self):
+		'''
+		Function to create an account's credentials before each test
+		'''
+		self.new_credential = Credential('lynne','Facebook','genchabe','pswd100')
+
+    def test__init__(self):
+		'''
+		Test to if check the initialization/creation of credential instances is properly done
+		'''
+		self.assertEqual(self.new_credential.user_name,'lynne')
+		self.assertEqual(self.new_credential.site_name,'Facebook')
+		self.assertEqual(self.new_credential.account_name,'genchabe')
+		self.assertEqual(self.new_credential.password,'pswd100')
+
+	def test_save_credentials(self):
+		'''
+		Test to check if the new credential info is saved into the credentials list
+		'''
+		self.new_credential.save_credentials()
+		twitter = Credential('brenda','Twitter','kwamboka','pswd100')
+		twitter.save_credentials()
+		self.assertEqual(len(Credential.credentials_list),2)
