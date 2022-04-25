@@ -57,7 +57,7 @@ def copy_credential(site_name):
 
 def main():
 	print(' ')
-	print('Hello! Welcome to Password Locker.')
+	print('Hey! Welcome to Password Locker.')
 	while True:
 		print(' ')
 		print("-"*60)
@@ -85,7 +85,7 @@ def main():
 			user_exists = verify_user(user_name,password)
 			if user_exists == user_name:
 				print(" ")
-				print(f'Welcome {user_name}. Please choose an option to continue.')
+				print(f'lets get started {user_name} !. Please choose an option to continue.')
 				print(' ')
 				while True:
 					print("-"*60)
@@ -94,7 +94,7 @@ def main():
 					print("-"*60)
 					if short_code == 'ex':
 						print(" ")
-						print(f'Goodbye {user_name}')
+						print(f'Till next time {user_name}!')
 						break
 					elif short_code == 'cc':
 						print(' ')
@@ -125,7 +125,7 @@ def main():
 					elif short_code == 'dc':
 						print(' ')
 						if display_credentials(user_name):
-							print('Here is a list of all your credentials')
+							print('Here is the list of all your credentials')
 							print(' ')
 							for credential in display_credentials(user_name):
 								print(f'Site Name: {credential.site_name} - Account Name: {credential.account_name} - Password: {credential.password}')
